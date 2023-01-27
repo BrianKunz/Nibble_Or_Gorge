@@ -24,6 +24,7 @@ class Signup extends React.Component {
                     Fish / Shellfish Allergy: <input type="checkbox" name="lactoseIntolerant" />
                     Egg Allergy: <input type="checkbox" name="lactoseIntolerant" />
                     Soy Allergy: <input type="checkbox" name="lactoseIntolerant" />
+                    <input type="submit" name="" value="Signup" />
                 </form>
             </div>
         )

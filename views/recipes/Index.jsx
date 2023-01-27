@@ -1,12 +1,27 @@
 const React = require("react");
-const DefaultLayout = require("../layout/Default");
 
 class Index extends React.Component {
   render() {
+    const { recipes } = this.props;
     return (
-      <DefaultLayout title="Index page">
-        <p>This is boilerplate 😎</p>
-      </DefaultLayout>
+      <div>
+        <h1>Recipes Index Page</h1>
+        <nav>
+          <a href="/recipes/new">Add a New Recipe</a>
+          <a href="/user/logout">
+            <button classnName="logoutBtn">Lougout</button>
+          </a>
+        </nav>
+        <ul>
+          {this.props.recipes.map((recipe, i) => {
+            return (
+              <li key={i}>
+                <a href={`/recipes/${recipe.id}`}> {recipe.title}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     );
   }
 }

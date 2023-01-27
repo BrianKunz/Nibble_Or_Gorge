@@ -18,7 +18,8 @@ const PORT = 3000;
 /**
  * Controller requires go here ⬇️
  */
-
+const recipeController = require("./controllers/recipe/recipeController")
+const userController = require("./controllers/userController")
 //--------------------------------
 
 // Mongoose connection
@@ -36,6 +37,10 @@ mongoose.connection.once("open", () => {
  */
 app.use(express.static("public")); //tells express to try to match requests with files in the directory called 'public'
 
+const setupMiddleware = require("./middleware/setupMiddleware");
+
+setupMiddleware(app);
+
 // Method override will allow us to use put & delete methods
 app.use(methodOverride("_method"));
 
@@ -52,10 +57,12 @@ app.engine("jsx", require("jsx-view-engine").createEngine());
 /**
  * Controller middlewares go here ⬇️
  */
+app.use("/recipes", recipeController);
+app.use("/user", userController);
 
 // Index route
 app.get("/", (req, res) => {
-  res.render("Index");
+  res.redirect("/recipes/");
 });
 
 // Listen on the port
