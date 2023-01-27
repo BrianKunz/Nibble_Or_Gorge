@@ -9,7 +9,7 @@ class Index extends React.Component {
         <nav>
           <a href="/recipes/new">Add a New Recipe</a>
           <a href="/user/logout">
-            <button classnName="logoutBtn">Lougout</button>
+            <button classnName="logoutBtn">Logout</button>
           </a>
         </nav>
         <ul>

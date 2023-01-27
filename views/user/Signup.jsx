@@ -7,7 +7,7 @@ class Signup extends React.Component {
                 <h1>Signup</h1>
 
                 <form action="/user/signup" method="POST">
-                    Email: <input type="text" defaultValue="" name="email" required />
+                    Email: <input type="text" defaultValue="" name="email" unique required />
                     Password:{" "}
                     <input type="password" defaultValue="" name="password" required />
                     Lactose Intolerant: <input type="checkbox" name="lactoseIntolerant" />

@@ -35,20 +35,22 @@ class Show extends React.Component {
         <br />
         {recipe.nationality}
         <br />
-        {/* {recipe.lactoseIntolerant ? `Lactose Intolerant Friendly` : null}, 
-        {recipe.glutenFree ? `Gluten Free` : null}, 
-        {recipe.vegetarian ? `Vegetarian` : null}, 
-        {recipe.vegan ? `Vegan` : null}, 
-        {recipe.kosher ? `Kosher` : null}, 
-        {recipe.keto ? `Keto` : null}, 
-        {recipe.diabetic ? `Diabetic Friendly` : null}, 
-        {recipe.dairyFree ? `Dairy Free` : null}, 
-        {recipe.lowCarb ? `Low Carb` : null}, 
-        {recipe.nutAllergy ? `Nut Free` : null}, 
-        {recipe.wheatAllergy ? `Wheat Free` : null}, 
-        {recipe.fishShellfishAllergy ? `Fish / Shellfish Free` : null}, 
-        {recipe.eggAllergy ? `Egg Free` : null}, 
-        {recipe.soyAllergy ? `Soy Free` : null},  */}
+        {recipe.lactoseIntolerant ? `Lactose Intolerant Friendly` : null} 
+        {recipe.glutenFree ? `Gluten Free` : null}
+        {recipe.vegetarian ? `Vegetarian` : null}
+        {recipe.vegan ? `Vegan` : null}
+        {recipe.kosher ? `Kosher` : null}
+        {recipe.keto ? `Keto` : null}
+        {recipe.diabetic ? `Diabetic Friendly` : null}
+        {recipe.dairyFree ? `Dairy Free` : null}
+        {recipe.lowCarb ? `Low Carb` : null}
+        {recipe.nutAllergy ? `Nut Free` : null}
+        {recipe.wheatAllergy ? `Wheat Free` : null}
+        {recipe.fishShellfishAllergy ? `Fish / Shellfish Free` : null}
+        {recipe.eggAllergy ? `Egg Free` : null}
+        {recipe.soyAllergy ? `Soy Free` : null}
+        <form action={`/recipes/${recipe._id}?_method=DELETE`} method="POST"><input type="submit" value="DELETE" /></form>
+        <form action={`/recipes/${recipe._id}/edit`} method="GET"><input type="submit" value="UPDATE" /></form>
       </div>
     );
   }

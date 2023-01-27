@@ -5,11 +5,11 @@ const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
 
-router.get("/Signup", (req, res) => {
+router.get("/signup", (req, res) => {
   res.render("user/Signup")
 })
 
-router.get("/Login", (req, res) => {
+router.get("/login", (req, res) => {
   res.render("user/Login")
 })
 

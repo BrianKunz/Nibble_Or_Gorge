@@ -2,7 +2,7 @@ const React = require("react");
 
 class New extends React.Component {
   render() {
-    const {title, _id, description, prepTime, cookTime, totalTime, servingSize, ingredients, directions, calories, fat, carbs, protein, nationality, lactoseIntolerant, glutenFree, vegetarian, vegan, kosher, keto, diabetic, dairyFree, lowCarb, nutAllergy, wheatAllergy, fishShellfishAllergy, eggAllergy, soyAllergy} = this.props.recipes;
+    const {title, _id, description, prepTime, cookTime, totalTime, servingSize, ingredients, directions, calories, fat, carbs, protein, nationality, lactoseIntolerant, glutenFree, vegetarian, vegan, kosher, keto, diabetic, dairyFree, lowCarb, nutAllergy, wheatAllergy, fishShellfishAllergy, eggAllergy, soyAllergy} = this.props.recipe;
 
     return (
       <div> 
@@ -63,7 +63,7 @@ class New extends React.Component {
           <br />
           Soy Free: {soyAllergy ? ( <input type="checkbox" name="soyAllergy" defaultChecked /> ) : ( <input type="checkbox" name="soyAllergy" />)}  
           <br />
-          <input type="submit" name="" value="Submit Changess" />
+          <input type="submit" name="" value="Submit Changes" />
         </form>
       </div>
     );
