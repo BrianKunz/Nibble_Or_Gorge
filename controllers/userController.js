@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+
 
 const User = require("../models/user");
 
@@ -14,14 +14,15 @@ router.get("/login", (req, res) => {
 })
 
 router.post("/signup", async (req, res) => {
-  const { email, password } = req.body;
+  const { username, email, password } = req.body;
 
   try {
     const hashedPassword = await bcrypt.hash(
       password,
       await bcrypt.genSalt(10)
     );
-    const createdUser = await User.create({ email, password: hashedPassword });
+    const createdUser = await User.create({ username, email, password: hashedPassword });
+    console.log(createdUser);
     res.redirect("/user/login");
   } catch (error) {
     console.log(error);
@@ -30,13 +31,13 @@ router.post("/signup", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
   try {
-    const foundUser = await User.findOne({ email });
+    const foundUser = await User.findOne({ username });
     const result = await bcrypt.compare(password, foundUser.password);
 
     if (result) {
-      req.session.email = foundUser.email;
+      req.session.username = foundUser.username;
       req.session.loggedIn = true;
       res.redirect("/recipes");
     } else {
