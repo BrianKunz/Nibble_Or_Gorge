@@ -28,6 +28,9 @@ const recipeSchema = new mongoose.Schema({
     fishShellfishAllergy: { type: Boolean, default: false},
     eggAllergy: { type: Boolean, default: false},
     soyAllergy: { type: Boolean, default: false},
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
+    username: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now},
 });
 
 const Recipe = mongoose.model("Recipe", recipeSchema);

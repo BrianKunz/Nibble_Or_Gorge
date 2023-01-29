@@ -1,12 +1,12 @@
 const React = require("react");
+const DefaultLayout = require("../layout/Default");
 
 class New extends React.Component {
   render() {
     return (
-      <div> 
-        <h1>New Recipe Page</h1>
+      <DefaultLayout title="New Recipe Page">
         <form action="/recipes" method="POST">
-          Title: <input type="text" name="title" />
+          Title: <input type="text" name="title" />  
           <br />
           Description: <input type="text" name="description" />
           <br />
@@ -62,7 +62,7 @@ class New extends React.Component {
           <br />
           <input type="submit" name="" value="Create Recipe" />
         </form>
-      </div>
+      </DefaultLayout>
     );
   }
 }

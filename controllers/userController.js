@@ -13,6 +13,10 @@ router.get("/login", (req, res) => {
   res.render("user/Login")
 })
 
+// router.get("/userhub/:id", (req, res) => {
+//   res.render("user/Userhub")
+// })
+
 router.post("/signup", async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -39,7 +43,7 @@ router.post("/login", async (req, res) => {
     if (result) {
       req.session.username = foundUser.username;
       req.session.loggedIn = true;
-      res.redirect("/recipes");
+      res.redirect("/recipes/all");
     } else {
       res.json({ error: "password doesn't match" });
     }

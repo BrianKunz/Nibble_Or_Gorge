@@ -2,7 +2,19 @@ const Recipe = require("../../models/recipe");
 
 const dataController = {
   index(req, res, next) {
-    Recipe.find({ email: req.session.email }, (error, allRecipes) => {
+    Recipe.find({ username: req.session.username }, (error, allRecipes) => {
+      if (error) {
+        res.status(404).send({
+          msg: error.message,
+        });
+      } else {
+        res.locals.data.recipes = allRecipes;
+        next();
+      }
+    });
+  },
+  all(req, res, next) {
+    Recipe.find({}, (error, allRecipes) => {
       if (error) {
         res.status(404).send({
           msg: error.message,
@@ -28,7 +40,7 @@ const dataController = {
     req.body.fishShellfishAllergy = req.body.fishShellfishAllergy === "on" ? true : false;
     req.body.eggAllergy = req.body.eggAllergy === "on" ? true : false;
     req.body.soyAllergy = req.body.soyAllergy === "on" ? true : false;
-    req.body.email = req.session.email;
+    req.body.username = req.session.username;
     Recipe.create(req.body, (error, createdRecipe) => {
       if (error) {
         res.status(404).send({
@@ -41,7 +53,7 @@ const dataController = {
     });
   },
   show(req, res, next) {
-    Recipe.findById(req.params.id, (error, foundRecipe) => {
+    Recipe.findById(req.params.id).populate('username').exec((error, foundRecipe) => {
       if (error) {
         res.status(404).send({
           msg: error.message,
@@ -50,7 +62,7 @@ const dataController = {
         res.locals.data.recipe = foundRecipe;
         next();
       }
-    });
+      });
   },
   update(req, res, next) {
     req.body.lactoseIntolerant = req.body.lactoseIntolerant === "on" ? true : false;

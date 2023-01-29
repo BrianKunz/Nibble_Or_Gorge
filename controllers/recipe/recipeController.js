@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const app = express();
 
 // Data controller
 const dataController = require("./dataController");
@@ -37,10 +38,13 @@ router.post("/api/", dataController.create, apiController.show);
 
 /**
  * Recipes
- */
+*/
 
 // Index
 router.get("/", dataController.index, viewController.index);
+
+// All
+router.get("/all", dataController.all, viewController.all);
 
 // New
 router.get("/new", viewController.newView);
@@ -56,6 +60,7 @@ router.post("/", dataController.create, viewController.redirectHome);
 
 // Edit
 router.get("/:id/edit", dataController.show, viewController.edit);
+
 // Show - Route
 router.get("/:id", dataController.show, viewController.show);
 

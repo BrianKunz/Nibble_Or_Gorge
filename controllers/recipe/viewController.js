@@ -3,6 +3,9 @@ const viewController = {
   index(req, res){
     res.render('recipes/Index', res.locals.data)
   },
+  all(req,res){
+    res.render('recipes/All', res.locals.data)
+  },
   show(req, res){
     res.render('recipes/Show', res.locals.data)
   },

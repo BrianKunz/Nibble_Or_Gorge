@@ -7,8 +7,10 @@ class Show extends React.Component {
     return (
       <div>
         <nav>
-          <a href="/recipes">Back</a>
+          <a href="/recipes/all">Return to All</a>
         </nav>
+        {recipe.username}
+        <br />
         {recipe.title}
         <br />
         {recipe.description}
@@ -49,8 +51,6 @@ class Show extends React.Component {
         {recipe.fishShellfishAllergy ? `Fish / Shellfish Free` : null}
         {recipe.eggAllergy ? `Egg Free` : null}
         {recipe.soyAllergy ? `Soy Free` : null}
-        <form action={`/recipes/${recipe._id}?_method=DELETE`} method="POST"><input type="submit" value="DELETE" /></form>
-        <form action={`/recipes/${recipe._id}/edit`} method="GET"><input type="submit" value="UPDATE" /></form>
       </div>
     );
   }
