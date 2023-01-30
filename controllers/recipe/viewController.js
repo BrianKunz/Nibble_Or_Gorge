@@ -21,6 +21,9 @@ const viewController = {
   redirectShow(req, res){
     res.redirect(RESOURCE_PATH + `/${req.params.id}`)
   },
+  newComment(req, res){
+    res.render('recipes/:id/comment')
+  }
 };
 
 module.exports = viewController

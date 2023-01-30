@@ -1,4 +1,5 @@
 const Recipe = require("../../models/recipe");
+const Comment = require("../../models/comment");
 
 const dataController = {
   index(req, res, next) {
@@ -53,7 +54,7 @@ const dataController = {
     });
   },
   show(req, res, next) {
-    Recipe.findById(req.params.id).populate('username').exec((error, foundRecipe) => {
+    Recipe.findById(req.params.id).populate('username').populate('comments').exec((error, foundRecipe) => {
       if (error) {
         res.status(404).send({
           msg: error.message,
@@ -107,6 +108,45 @@ const dataController = {
       }
     });
   },
+  async comment (req, res, next) {
+    const {
+      body: {body, rating},
+      params: {id},
+    } = req;
+    try {
+      const createdComment = await Comment.create({
+        body,
+        rating,
+        recipe: id,
+      });
+      // Save that comment on the recipe
+      const updatedRecipe = Recipe.findByIdAndUpdate(id, {
+        $push: { comments: createdComment._id },
+      }).exec();
+      res.json(updatedRecipe);
+      next();
+    } catch (error) {
+      res.status(404).send({
+        msg: error.message,
+      });
+    }
+  },
+  destroyComment (req, res, next) {
+    const { id } = req.params;
+    const { commentID } = req.body;
+    Recipe.findById(id, async (error, foundRecipe) => {
+      if (error) {
+        res.status(404).send({
+          msg: error.message,
+        });
+        return;
+      }
+      await foundRecipe.comments.pull(commentID);
+      const saved = await foundRecipe.save();
+      res.json(saved);
+      next();
+    });
+  }
 };
 
 module.exports = dataController;

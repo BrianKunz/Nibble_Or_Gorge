@@ -51,6 +51,10 @@ class Show extends React.Component {
         {recipe.fishShellfishAllergy ? `Fish / Shellfish Free` : null}
         {recipe.eggAllergy ? `Egg Free` : null}
         {recipe.soyAllergy ? `Soy Free` : null}
+        <br />
+        <a href="/recipe/:id/comment">Comment</a>
+        <br />
+        {recipe.comments}
       </div>
     );
   }

@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const app = express();
 
 // Data controller
 const dataController = require("./dataController");
 const viewController = require("./viewController");
 const apiController = require("./apiController");
+
 
 router.use((req, res, next) => {
   console.log("session", req.session);
@@ -63,5 +63,14 @@ router.get("/:id/edit", dataController.show, viewController.edit);
 
 // Show - Route
 router.get("/:id", dataController.show, viewController.show);
+
+// Create Comment
+router.get("/recipes/:id/comment", viewController.newComment);
+
+// Comments
+router.post("/recipe/comment/:id", dataController.comment, viewController.redirectHome);
+
+//Comment Delete
+router.delete("/recipe/comment/:id", dataController.destroyComment, viewController.redirectHome);
 
 module.exports = router;
