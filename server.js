@@ -62,7 +62,7 @@ app.use("/user", userController);
 
 // Index route
 app.get("/", (req, res) => {
-  res.redirect("/recipes/");
+  res.redirect("/recipes/all");
 });
 
 // Listen on the port

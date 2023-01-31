@@ -108,7 +108,7 @@ const dataController = {
       }
     });
   },
-  async comment (req, res, next) {
+  async createComment (req, res, next) {
     const {
       body: {body, rating},
       params: {id},

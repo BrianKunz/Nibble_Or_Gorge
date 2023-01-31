@@ -1,19 +1,24 @@
 const React = require("react");
+const DefaultLayout = require("../layout/Default");
 
 class Login extends React.Component {
     render() {
         return (
-            <div>
-                <h1>Login</h1>
-                <a href="/user/signup"><h3>SignUp</h3></a>
-
+            <DefaultLayout cssPath="/css/app.css">
+            <nav className="imgContainer">
+                <img src="https://i.imgur.com/KXJpXYX.jpg" />
+            </nav>
+            <nav className="formContainer">
+                <h1>Signup</h1>
                 <form action="/user/login" method="POST">
                     Username: <input type="text" defaultValue="" name="username" required />
                     Password:{" "}
                     <input type="password" defaultValue="" name="password" required />
                     <input type="submit" name="" value="Login" />
+                    <a href="/user/signup">Sign Up</a>
                 </form>
-            </div>
+            </nav>
+        </DefaultLayout>
         );
     }
 };

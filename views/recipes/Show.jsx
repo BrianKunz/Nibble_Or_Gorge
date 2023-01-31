@@ -52,7 +52,11 @@ class Show extends React.Component {
         {recipe.eggAllergy ? `Egg Free` : null}
         {recipe.soyAllergy ? `Soy Free` : null}
         <br />
-        <a href="/recipe/:id/comment">Comment</a>
+        <form action={`/recipe/${recipe._id}/comment`} method="POST">
+                    <input type="text" name="body" />
+                    <input type="number" name="rating" />
+                    <input type="submit" name="" value="Post Comment" />
+                </form>
         <br />
         {recipe.comments}
       </div>
