@@ -8,9 +8,7 @@ class All extends React.Component {
         <nav>
             <a href="/recipes/">See Your Recipes</a>
             <br />
-            <a href="/user/logout">
-                <button className="logoutBtn">Logout</button>
-            </a>
+            <a href="/user/logout">Logout</a>
         </nav>
         <ul>
           {this.props.recipes.map((recipe, i) => {

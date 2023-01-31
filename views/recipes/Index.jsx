@@ -10,9 +10,7 @@ class Index extends React.Component {
           <br />
           <a href="/recipes/all">View All</a>
           <br />
-          <a href="/user/logout">
-            <button className="logoutBtn">Logout</button>
-          </a>
+          <a href="/user/logout">Logout</a>
         </nav>
         <ul>
           {this.props.recipes.map((recipe, i) => {
