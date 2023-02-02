@@ -1,69 +1,172 @@
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: #333;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  background: linear-gradient(to bottom, #333, #777, #333);
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container{ 
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 5px #333;
+  background-color: #999;
+  margin-right: 50px;
+}
+
+.topmenubar {
+  display: flex;
+  list-style: none;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+header nav a {
+  margin-left: 20px;
+}
+
+img {
+  width: 40%;
+  margin-bottom: 1rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+form {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 40px;
+  width: 60%;
+  padding: 10px;
+  margin: 0.5rem 0;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid rgb(57, 100, 219);
+  text-align: center;
+}
+
+input[type="submit"],
+.button {
+  background-image: linear-gradient(to bottom, #999, steelblue);
+  border: 1px solid #999;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0px 2px 5px #333;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="submit"]:hover,
+.button:hover {
+  background-color: silver;
+}
+
+input[type="submit"]:active,
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0px 0px 1px silver;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  background-color: lightgray;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nutrition-info {
+  background-color: lightblue;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.dietary-restrictions {
+  background-color: lightcoral;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.dualBoxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0;
   }
   
-  img {
-    width: 40%;
-    margin-bottom: 1rem;
+  .times, .nutrition-info {
+  width: 45%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px #333;
+  border: 1px solid #333;
+  text-align: center;
   }
   
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    margin-bottom: 1rem;
-  }
-  
-  form {
-    font-size: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    height: 40px;
-    width: 60%;
-    padding: 10px;
-    margin: 0.5rem 0;
-    font-size: 12px;
-    border-radius: 5px;
-    border: 1px solid rgb(57, 100, 219);
-    text-align: center;
-  }
-  
-  input[type="submit"],
-  a {
-    background-image: linear-gradient(to bottom, #999, steelblue);
-    border: 1px solid #999;
-    border-radius: 5px;
-    color: #fff;
-    text-align: center;
-    font-size: 18px;
-    height: 50px;
-    width: 200px;
-    cursor: pointer;
-    margin-top: 1rem;
-    box-shadow: 0px 2px 5px #333;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  input[type="submit"]:hover,
-  a:hover {
-    background-color: silver;
+  .nutrition-info {
+  background-color: #00bcd4;
+  color: white;
   }
 
-  input[type="submit"]:active,
-  a:active {
-    transform: translateY(1px);
-    box-shadow: 0px 0px 1px silver;
+  li{
+    list-style: none;
+  }
+
+  h1 {
+    color: steelblue;
+  }
+
+  .recipeLists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  .allRecipes {
+    width: calc(20% - 10px);
+    flex-direction: column;
+    list-style: none;
   }

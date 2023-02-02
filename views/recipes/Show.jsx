@@ -1,65 +1,70 @@
 const React = require("react");
+const DefaultLayout = require("../layout/Default");
 
 class Show extends React.Component {
   render() {
     const recipe = this.props.recipe;
 
     return (
-      <div>
-        <nav>
-          <a href="/recipes/all">Return to All</a>
-        </nav>
-        {recipe.username}
+      <DefaultLayout>
+        <div className="title">{recipe.title}</div>
+        Created by: {recipe.username}
         <br />
-        {recipe.title}
-        <br />
-        {recipe.description}
-        <br />
-        {recipe.prepTime}
-        <br />
-        {recipe.cookTime}
-        <br />
-        {recipe.totalTime}
-        <br />
-        {recipe.servingSize}
-        <br />
-        {recipe.ingredients}
-        <br />
-        {recipe.directions}
-        <br />
-        {recipe.calories}
-        <br />
-        {recipe.fat}
-        <br />
-        {recipe.carbs}
-        <br />
-        {recipe.protein}
-        <br />
+        Description:
+        <div className="description">{recipe.description}</div>
+        <div className="dualBoxes">
+          <div className="times">
+            Prep Time: {recipe.prepTime} mins
+            <br />
+            Cook Time: {recipe.cookTime} mins
+            <br />
+            Total Time: {recipe.totalTime} mins
+            <br />
+            Serving Size: {recipe.servingSize}
+            <br />
+            Ingredients: {recipe.ingredients}
+            <br />
+          </div>
+          <div className="nutrition-info">
+            Calories: {recipe.calories} cal
+            <br />
+            Fat: {recipe.fat} g
+            <br />
+            Carbs: {recipe.carbs} g
+            <br />
+            Protein: {recipe.protein} g
+          </div>
+        </div>
+          Directions: {recipe.directions}
+          <br />
         {recipe.nationality}
         <br />
-        {recipe.lactoseIntolerant ? `Lactose Intolerant Friendly` : null} 
-        {recipe.glutenFree ? `Gluten Free` : null}
-        {recipe.vegetarian ? `Vegetarian` : null}
-        {recipe.vegan ? `Vegan` : null}
-        {recipe.kosher ? `Kosher` : null}
-        {recipe.keto ? `Keto` : null}
-        {recipe.diabetic ? `Diabetic Friendly` : null}
-        {recipe.dairyFree ? `Dairy Free` : null}
-        {recipe.lowCarb ? `Low Carb` : null}
-        {recipe.nutAllergy ? `Nut Free` : null}
-        {recipe.wheatAllergy ? `Wheat Free` : null}
-        {recipe.fishShellfishAllergy ? `Fish / Shellfish Free` : null}
-        {recipe.eggAllergy ? `Egg Free` : null}
-        {recipe.soyAllergy ? `Soy Free` : null}
+        <div className="dietary-restrictions">
+          {recipe.lactoseIntolerant ? `Lactose Intolerant Friendly ` : null} 
+          {recipe.glutenFree ? `Gluten Free ` : null}
+          {recipe.vegetarian ? `Vegetarian ` : null}
+          {recipe.vegan ? `Vegan ` : null}
+          {recipe.kosher ? `Kosher ` : null}
+          {recipe.keto ? `Keto ` : null}
+          {recipe.diabetic ? `Diabetic Friendly ` : null}
+          {recipe.dairyFree ? `Dairy Free ` : null}
+          {recipe.lowCarb ? `Low Carb ` : null}
+          {recipe.nutAllergy ? `Nut Free ` : null}
+          {recipe.wheatAllergy ? `Wheat Free ` : null}
+          {recipe.fishShellfishAllergy ? `Fish / Shellfish Free ` : null}
+          {recipe.eggAllergy ? `Egg Free ` : null}
+          {recipe.soyAllergy ? `Soy Free ` : null}
+        </div>
         <br />
-        <form action={`/recipe/${recipe._id}/comment`} method="POST">
-                    <input type="text" name="body" />
-                    <input type="number" name="rating" />
+        <form className="commentSection" action={`/recipe/${recipe._id}/comment`} method="POST">
+                    Write your comment here: <input type="text" name="body" />
+                    Rating: <input type="number" name="rating" />
                     <input type="submit" name="" value="Post Comment" />
                 </form>
         <br />
+        Comments: 
         {recipe.comments}
-      </div>
+      </DefaultLayout>
     );
   }
 }

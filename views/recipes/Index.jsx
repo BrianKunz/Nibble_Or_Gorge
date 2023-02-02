@@ -4,14 +4,7 @@ class Index extends React.Component {
   render() {
     const { recipes } = this.props;
     return (
-      <DefaultLayout title={`Recipes Index Page`}>
-        <nav>
-          <a href="/recipes/new">Add a New Recipe</a>
-          <br />
-          <a href="/recipes/all">View All</a>
-          <br />
-          <a href="/user/logout">Logout</a>
-        </nav>
+      <DefaultLayout title={`My Recipes`}>
         <ul>
           {this.props.recipes.map((recipe, i) => {
             return (
