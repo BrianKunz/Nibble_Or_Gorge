@@ -1,11 +1,12 @@
 const React = require("react");
+const DefaultLayout = require("../layout/Default");
 
 class New extends React.Component {
   render() {
     const {title, _id, description, prepTime, cookTime, totalTime, servingSize, ingredients, directions, calories, fat, carbs, protein, nationality, lactoseIntolerant, glutenFree, vegetarian, vegan, kosher, keto, diabetic, dairyFree, lowCarb, nutAllergy, wheatAllergy, fishShellfishAllergy, eggAllergy, soyAllergy} = this.props.recipe;
 
     return (
-      <div> 
+      <DefaultLayout> 
         <h1>Edit Recipe page</h1>
         {/* NOTE: action will be the route, method will be the HTTP verb */}
         <form action={`/recipes/${_id}?_method=PUT`} method="POST">
@@ -65,7 +66,7 @@ class New extends React.Component {
           <br />
           <input type="submit" name="" value="Submit Changes" />
         </form>
-      </div>
+      </DefaultLayout>
     );
   }
 }

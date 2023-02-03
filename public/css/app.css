@@ -4,6 +4,7 @@ body {
   height: 100vh;
   flex-direction: column;
   align-items: center;
+  color: lightgrey;
 }
 
 .container{ 
@@ -40,9 +41,44 @@ header nav a {
   margin-left: 20px;
 }
 
+a:visited{
+  color: rgb(3, 3, 122);
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.right-banner {
+  width: 25%;
+  height: 80%;
+  position: fixed;
+  right: 20px;
+  top: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.left-banner {
+  width: 25%;
+  height: 80%;
+  position: fixed;
+  left: 20px;
+  top: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rightImg, .leftImg {
+  height: 40%;
+  width: 50%
+}
+
 img {
-  width: 40%;
-  margin-bottom: 1rem;
+  width: 30%;
 }
 
 nav {
@@ -75,7 +111,7 @@ input[type="password"] {
 
 input[type="submit"],
 .button {
-  background-image: linear-gradient(to bottom, #999, steelblue);
+  background-image: linear-gradient(to bottom, #999, rgb(3, 3, 122));
   border: 1px solid #999;
   border-radius: 5px;
   color: #fff;
@@ -105,7 +141,7 @@ input[type="submit"]:active,
 .description, .directions {
   background-color: lightgray;
   padding: 1rem;
-  /* margin-bottom: 1rem; */
+  color: rgb(3, 3, 122);
 }
 
 .nutrition-info {
@@ -141,11 +177,15 @@ input[type="submit"]:active,
   width: 45%;
   padding: 20px;
   margin: 5%;
-  background-color: white;
   border-radius: 10px;
   box-shadow: 0px 2px 10px #333;
   border: 1px solid #333;
   text-align: center;
+  }
+
+  .times {
+    background-color: white;
+    color: #777;
   }
   
   .nutrition-info {
@@ -154,7 +194,7 @@ input[type="submit"]:active,
   }
 
   h1 {
-    color: steelblue;
+    color: rgb(3, 3, 122);
   }
 
   .bigList {

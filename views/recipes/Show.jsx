@@ -56,14 +56,25 @@ class Show extends React.Component {
           {recipe.soyAllergy ? `Soy Free ` : null}
         </div>
         <br />
-        <form className="commentSection" action={`/recipe/${recipe._id}/comments`} method="POST">
+        <form className="commentSection" action={`/recipes/${recipe._id}/comments`} method="POST">
                     Write your comment here: <input type="text" name="body" />
                     Rating: <input type="number" name="rating" />
                     <input type="submit" name="" value="Post Comment" />
                 </form>
         <br />
         Comments: 
-        {recipe.comments}
+        <div className="commentBox"> {
+          recipe.comments.map(comment => {
+            return (
+              <div key={comment._id}>
+                <p>{comment.body}</p>
+                <p>{comment.rating}</p>
+                <p>Anonymous</p>
+              </div>
+              );
+            })
+          }
+        </div>
       </DefaultLayout>
     );
   }

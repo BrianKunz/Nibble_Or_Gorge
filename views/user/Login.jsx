@@ -5,17 +5,17 @@ class Login extends React.Component {
     render() {
         return (
             <DefaultLayout cssPath="/css/app.css">
-            <nav className="imgContainer">
+            <div className="imgContainer">
                 <img src="https://i.imgur.com/KXJpXYX.jpg" />
-            </nav>
+            </div>
             <nav className="formContainer">
-                <h1>Signup</h1>
+                <h1>Login</h1>
                 <form action="/user/login" method="POST">
                     Username: <input type="text" defaultValue="" name="username" required />
                     Password:{" "}
                     <input type="password" defaultValue="" name="password" required />
                     <input type="submit" name="" value="Login" />
-                    <a href="/user/signup">Sign Up</a>
+                    <a className="button" href="/user/signup">Sign Up</a>
                 </form>
             </nav>
         </DefaultLayout>

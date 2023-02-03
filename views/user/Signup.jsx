@@ -5,9 +5,9 @@ class Signup extends React.Component {
     render() {
         return (
             <DefaultLayout cssPath="/css/app.css">
-                <nav className="imgContainer">
-                    <img src="https://i.imgur.com/KXJpXYX.jpg" />
-                </nav>
+                <div className="imgContainer">
+                    <img src="https://i.imgur.com/gHg3feq.jpg" />
+                </div>
                 <nav className="formContainer">
                     <h1>Signup</h1>
                     <form action="/user/signup" method="POST">

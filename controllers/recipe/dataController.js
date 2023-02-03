@@ -123,7 +123,7 @@ const dataController = {
       const updatedRecipe = Recipe.findByIdAndUpdate(id, {
         $push: { comments: createdComment._id },
       }).exec();
-      res.json(updatedRecipe);
+      // res.json(updatedRecipe);
       next();
     } catch (error) {
       res.status(404).send({

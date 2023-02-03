@@ -55,6 +55,9 @@ router.delete("/:id", dataController.destroy, viewController.redirectHome);
 // Update
 router.put("/:id", dataController.update, viewController.redirectShow);
 
+// Create Comment
+router.post("/:id/comments", dataController.createComment, viewController.redirectShow);
+
 // Create
 router.post("/", dataController.create, viewController.redirectHome);
 
@@ -64,10 +67,8 @@ router.get("/:id/edit", dataController.show, viewController.edit);
 // Show - Route
 router.get("/:id", dataController.show, viewController.show);
 
-// Create Comment
-router.post("/:id/comment", dataController.createComment, viewController.redirectShow);
 
 //Comment Delete
-router.delete("/:id/comment", dataController.destroyComment, viewController.redirectHome);
+router.delete("/:id/comments", dataController.destroyComment, viewController.redirectHome);
 
 module.exports = router;
