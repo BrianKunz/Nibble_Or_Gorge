@@ -116,20 +116,16 @@ input[type="submit"],
   border-radius: 5px;
   color: #fff;
   text-align: center;
-  font-size: 18px;
-  height: 50px;
-  width: 200px;
+  font-size: 12px;
+  height: 25px;
+  width: 100px;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: .5rem;
   box-shadow: 0px 2px 5px #333;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-input[type="submit"]:hover,
-.button:hover {
-  background-color: silver;
 }
 
 input[type="submit"]:active,
@@ -172,10 +168,9 @@ input[type="submit"]:active,
   align-items: center;
   justify-content: space-between;
   margin: 40px 0;
-
   }
   
-.times, .nutrition-info {
+.ingredients, .nutrition-info {
   width: 40%;
   padding: 20px;
   margin: 10%;
@@ -186,12 +181,12 @@ input[type="submit"]:active,
   border: 1px solid #333;
   text-align: center;
   }
-
-.times {
-    background-color: white;
-    color: #777;
-  }
   
+.ingredients {
+  background-color: white;
+  color: #777;
+  }
+    
 .nutrition-info {
   background-color: #00bcd4;
   color: white;
@@ -230,39 +225,39 @@ h1 {
   color: black;
   }
   
-  .totalComment {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border: 1px solid black;
-    background-color: lightgray;
-    padding: 2px;
-    margin-bottom: 5px;
-    box-shadow: 4px 4px 7px steelblue;
-  }
-  
-  .commentBody {
-    flex: 1;
-    text-align: center;
-    margin-bottom: 20px;
-    color: darkblue;
-  }
-  
-  .commentRating {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 1px;
-    color: blue;
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: 0;
-  }
-  
-  .anon {
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 5px;
-    margin-bottom: 1px;
-    color: darkmagenta;
-  }
+.totalComment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid black;
+  background-color: lightgray;
+  padding: 2px;
+  margin-bottom: 5px;
+  box-shadow: 4px 4px 7px steelblue;
+}
+
+.commentBody {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 20px;
+  color: darkblue;
+}
+
+.commentRating {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 1px;
+  color: blue;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.anon {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+  margin-bottom: 1px;
+  color: darkmagenta;
+}

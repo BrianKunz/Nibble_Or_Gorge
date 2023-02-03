@@ -22,7 +22,7 @@ class New extends React.Component {
           <br />
           Serving Size: <input type="number" name="servingSize" defaultValue={servingSize}/>
           <br />
-          Ingredients: <input type="array" name="ingredients" defaultValue={ingredients}/>
+          Ingredients: <input type="text" name="ingredients" defaultValue={ingredients}/>
           <br />
           Directions: <input type="text" name="directions" defaultValue={directions}/>
           <br />

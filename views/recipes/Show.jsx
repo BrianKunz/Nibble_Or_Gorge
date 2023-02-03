@@ -10,9 +10,18 @@ class Show extends React.Component {
         <h5>Created by: {recipe.username}</h5>
         <br />
         <h4>Description:</h4>
-        <div className="description">{recipe.description}</div>
-        <div className="dualBoxes">
-          <div className="times">
+          <div className="description">{recipe.description}</div>
+          <div className="dualBoxes">
+          <div className="ingredients">
+            Ingredients:
+            <br />
+            <ul>
+              {recipe.ingredients.map(ingredient => (
+                <li key={ingredient}>{ingredient}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="nutrition-info">
             Prep Time: {recipe.prepTime} mins
             <br />
             Cook Time: {recipe.cookTime} mins
@@ -21,10 +30,6 @@ class Show extends React.Component {
             <br />
             Serving Size: {recipe.servingSize}
             <br />
-            Ingredients: {recipe.ingredients}
-            <br />
-          </div>
-          <div className="nutrition-info">
             Calories: {recipe.calories} cal
             <br />
             Fat: {recipe.fat} g
@@ -57,10 +62,10 @@ class Show extends React.Component {
         </div>
         <br />
         <form className="commentSection" action={`/recipes/${recipe._id}/comments`} method="POST">
-                    Write your comment here: <input type="text" name="body" />
-                    Rating: <input type="number" name="rating" />
-                    <input type="submit" name="" value="Post Comment" />
-                </form>
+            Write your comment here: <input type="text" name="body" />
+            Rating: <input type="number" name="rating" />
+            <input type="submit" name="" value="Post Comment" />
+        </form>
         <br />
         Comments: 
         <div className="commentBox"> {
