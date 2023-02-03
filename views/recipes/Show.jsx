@@ -66,10 +66,10 @@ class Show extends React.Component {
         <div className="commentBox"> {
           recipe.comments.map(comment => {
             return (
-              <div key={comment._id}>
-                <p>{comment.body}</p>
-                <p>{comment.rating}</p>
-                <p>Anonymous</p>
+              <div className="totalComment" key={comment._id}>
+                <p className="commentRating">Rating: {comment.rating}</p>
+                <p className="commentBody">{comment.body}</p>
+                <p className="anon">Anonymous</p>
               </div>
               );
             })
