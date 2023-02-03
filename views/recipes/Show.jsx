@@ -6,11 +6,10 @@ class Show extends React.Component {
     const recipe = this.props.recipe;
 
     return (
-      <DefaultLayout>
-        <div className="title">{recipe.title}</div>
-        Created by: {recipe.username}
+      <DefaultLayout title={recipe.title}>
+        <h5>Created by: {recipe.username}</h5>
         <br />
-        Description:
+        <h4>Description:</h4>
         <div className="description">{recipe.description}</div>
         <div className="dualBoxes">
           <div className="times">
@@ -35,9 +34,10 @@ class Show extends React.Component {
             Protein: {recipe.protein} g
           </div>
         </div>
-          Directions: {recipe.directions}
-          <br />
-        {recipe.nationality}
+        Directions:
+        <div className="directions">{recipe.directions}</div>
+        <br />
+        <div className="nationality">{recipe.nationality}</div>
         <br />
         <div className="dietary-restrictions">
           {recipe.lactoseIntolerant ? `Lactose Intolerant Friendly ` : null} 

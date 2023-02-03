@@ -102,16 +102,10 @@ input[type="submit"]:active,
   box-shadow: 0px 0px 1px silver;
 }
 
-.title {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.description {
+.description, .directions {
   background-color: lightgray;
   padding: 1rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .nutrition-info {
@@ -128,6 +122,14 @@ input[type="submit"]:active,
   color: white;
 }
 
+.nationality {
+  background-color: lightcyan;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: black;
+}
+
 .dualBoxes {
   display: flex;
   align-items: center;
@@ -138,6 +140,7 @@ input[type="submit"]:active,
   .times, .nutrition-info {
   width: 45%;
   padding: 20px;
+  margin: 5%;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 2px 10px #333;
