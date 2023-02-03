@@ -65,7 +65,7 @@ router.get("/:id/edit", dataController.show, viewController.edit);
 router.get("/:id", dataController.show, viewController.show);
 
 // Create Comment
-router.post("/recipe/:id/comment", dataController.createComment, viewController.redirectShow);
+router.post("/:id/comment", dataController.createComment, viewController.redirectShow);
 
 //Comment Delete
 router.delete("/:id/comment", dataController.destroyComment, viewController.redirectHome);

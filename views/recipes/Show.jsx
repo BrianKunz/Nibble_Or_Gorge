@@ -56,7 +56,7 @@ class Show extends React.Component {
           {recipe.soyAllergy ? `Soy Free ` : null}
         </div>
         <br />
-        <form className="commentSection" action={`/recipe/${recipe._id}/comment`} method="POST">
+        <form className="commentSection" action={`/recipe/${recipe._id}/comments`} method="POST">
                     Write your comment here: <input type="text" name="body" />
                     Rating: <input type="number" name="rating" />
                     <input type="submit" name="" value="Post Comment" />

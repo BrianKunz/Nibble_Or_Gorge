@@ -150,23 +150,24 @@ input[type="submit"]:active,
   color: white;
   }
 
-  li{
-    list-style: none;
-  }
-
   h1 {
     color: steelblue;
   }
 
-  .recipeLists {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 10px 0;
+  .bigList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    list-style: none;
+    margin-left: 17%;
+    padding: 0;
+    width: 80%;
+    height: 70%;
   }
   
-  .allRecipes {
-    width: calc(20% - 10px);
+  .singleRecipe {
+    display: flex;
     flex-direction: column;
-    list-style: none;
-  }
+    align-items: center;
+    justify-content: center;
+}
