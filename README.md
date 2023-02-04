@@ -14,7 +14,7 @@ Javascript, HTML, CSS, NodeJS, Express, Mongoose, ByCryptjs, Connect-Mongo, Dote
 
 ## Getting Started
 
-Get started at this link here:
+Get started at this link here: https://nibble-or-gorge.herokuapp.com/
 
 Make sure to install the proper dependencies via:
 `npm init -y
